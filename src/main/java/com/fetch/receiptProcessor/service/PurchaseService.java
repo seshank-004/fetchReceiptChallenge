@@ -1,5 +1,8 @@
 package com.fetch.receiptProcessor.service;
 
-public interface PurchaseService {
+import com.fetch.receiptProcessor.model.Receipt;
 
+public interface PurchaseService {
+    String saveReceipt(Receipt receipt);
+    Integer getPointsById(String id);
 }

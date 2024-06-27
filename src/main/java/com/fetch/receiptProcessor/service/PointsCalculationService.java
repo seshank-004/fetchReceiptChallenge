@@ -1,5 +1,7 @@
 package com.fetch.receiptProcessor.service;
 
-public interface PointsCalculationService {
+import com.fetch.receiptProcessor.model.Receipt;
 
+public interface PointsCalculationService {
+    int calculatePoints(Receipt receipt);
 }
