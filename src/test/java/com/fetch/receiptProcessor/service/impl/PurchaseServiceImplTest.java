@@ -14,6 +14,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.fetch.receiptProcessor.model.Receipt;
+import com.fetch.receiptProcessor.utils.Exception.ReceiptNotFoundException;
 
 public class PurchaseServiceImplTest {
 
@@ -55,7 +56,7 @@ public class PurchaseServiceImplTest {
 
     @Test
     public void testGetPointsByIdInvalidId() {
-        assertThrows(NoSuchElementException.class, () -> purchaseService.getPointsById("invalid-id"));
+        assertThrows(ReceiptNotFoundException.class, () -> purchaseService.getPointsById("invalid-id"));
     }
 
     @Test

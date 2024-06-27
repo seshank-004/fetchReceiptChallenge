@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.fetch.receiptProcessor.model.Receipt;
 import com.fetch.receiptProcessor.service.PointsCalculationService;
 import com.fetch.receiptProcessor.service.PurchaseService;
+import com.fetch.receiptProcessor.utils.Exception.ReceiptNotFoundException;
 
 
 @Service
@@ -54,7 +55,7 @@ public class PurchaseServiceImpl implements PurchaseService {
     @Override
     public Integer getPointsById(String id) {
          if (!receiptStorage.containsKey(id)) {
-            throw new NoSuchElementException("Receipt not found for ID: " + id);
+            throw new ReceiptNotFoundException("Receipt not found for ID: " + id);
         }
         return receiptStorage.get(id);
     }
